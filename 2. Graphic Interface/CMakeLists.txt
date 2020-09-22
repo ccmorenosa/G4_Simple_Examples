@@ -9,7 +9,7 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
 endif()
 
 ### Set Project name
-project(VELO_Tesis VERSION 0.1.0)
+project(Example2 VERSION 0.1.0)
 
 ### Sets C++ 11 standard
 set(CMAKE_CXX_STANDARD 11)
@@ -32,10 +32,10 @@ add_subdirectory(Detector)
 add_subdirectory(PhysicList)
 
 ### Add an executable
-add_executable(VELO_Tesis main.cpp)
+add_executable(Example2 main.cpp)
 
 ### Link libraries
-target_link_libraries(VELO_Tesis
+target_link_libraries(Example2
   ${Geant4_LIBRARIES}
   primary_generator
   actions
