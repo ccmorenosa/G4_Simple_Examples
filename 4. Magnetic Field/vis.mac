@@ -1,0 +1,45 @@
+# Create an OpenGL view
+/vis/open OGL
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+# Draw geometry
+/vis/drawVolume
+
+# Specify view angle:
+/vis/viewer/set/viewpointVector -1 0 0
+/vis/viewer/set/lightsVector -1 .5 -1
+
+# Specify style (surface, wireframe, auxiliary edges,...)
+/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 50
+
+# Draw smooth trajectories at end of event, showing trajectory points
+# as markers 2 pixels wide
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsSize 2
+
+# To superimpose all of the events from a given run
+/vis/scene/endOfEventAction accumulate
+
+# Frame
+/vis/set/colour cyan
+/vis/set/lineWidth 2
+/vis/scene/add/frame   # Simple frame around the view
+
+# "World" is transparent gray to represent air
+/vis/geometry/set/colour World 0 0.6 0.6 1 .1
+/vis/geometry/set/colour Silver 0 0.75 0.75 0.75 .7
+/vis/viewer/set/style surface
+/vis/viewer/set/hiddenMarker false
+/vis/viewer/set/viewpointThetaPhi 120 150
+
+# Re-establish auto refreshing and verbosity
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
