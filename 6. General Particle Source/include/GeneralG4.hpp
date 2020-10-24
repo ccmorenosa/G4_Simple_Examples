@@ -42,6 +42,6 @@
 
 // Events
 #include "G4Event.hh"
-#include "G4ParticleGun.hh"
+#include "G4GeneralParticleSource.hh"
 
 #endif // GENERALG4_HG4
