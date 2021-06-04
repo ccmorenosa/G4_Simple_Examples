@@ -5,7 +5,8 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
   message(FATAL_ERROR
     "You cannot build in a source directory (or any directory with a CMakeLists.txt file).\n"
     "Please make a build subdirectory.\n"
-    "Feel free to remove CMakeCache.txt and CMakeFiles.")
+    "Feel free to remove CMakeCache.txt and CMakeFiles."
+  )
 endif()
 
 ### Set Project name
@@ -29,7 +30,7 @@ add_subdirectory(include)
 add_subdirectory(PrimaryGenerator)
 add_subdirectory(Actions)
 add_subdirectory(Detector)
-add_subdirectory(PhysicList)
+add_subdirectory(PhysicsList)
 
 ### Add an executable
 add_executable(Example1 main.cpp)

@@ -29,7 +29,7 @@ add_subdirectory(include)
 add_subdirectory(PrimaryGenerator)
 add_subdirectory(Actions)
 add_subdirectory(Detector)
-add_subdirectory(PhysicList)
+add_subdirectory(PhysicsList)
 
 ### Add an executable
 add_executable(Example4 main.cpp)
